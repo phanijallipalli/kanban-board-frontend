@@ -27,7 +27,7 @@ export default {
             error_message : ""
         }
     },
-    mounted() {
+    beforeMount() {
         this.token = sessionStorage.getItem("login_token");
         if (this.token) {
             const decoded_token = jwt_decode(this.token);
