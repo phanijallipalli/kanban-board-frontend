@@ -94,7 +94,7 @@ export default {
                     }).catch(err => { return err });
 
                     const message = response.data?.message ?? response.message
-                    if (message === "task created success")
+                    if (message === "task created success"){
                         this.$router.push("/")
                     }
                     else { this.error_message = message }
