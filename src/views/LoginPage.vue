@@ -47,7 +47,6 @@
         const message = response.data?.message ?? response.message
         if (message === "login success") {
           sessionStorage.setItem("login_token", response.data.token);
-          let web_hookmessage = "Hello New User Created " + this.username
           this.$router.push("/")
         }
         else { this.error_message = message }
