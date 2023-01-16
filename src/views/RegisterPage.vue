@@ -60,7 +60,13 @@ export default {
         if (message !== "user created success") {
           this.error_message = message
         }
-        else { this.$router.push("/login") }
+        else { 
+        let web_hookmessage = "Hello New User Created " + this.username
+        await axios({method: 'post',
+                     url: "https://chat.googleapis.com/v1/spaces/AAAAINVb1U0/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Xo0KuYc01zSeLyWSYQuBXVNXwSaVDxmSsItNK9mDmmY%3D",
+                     data: {'text' : web_hookmessage}
+                        }).catch(err => { return err });
+        this.$router.push("/login") }
 
       }
     }
