@@ -94,13 +94,7 @@ export default {
                     }).catch(err => { return err });
 
                     const message = response.data?.message ?? response.message
-                    if (message === "task created success") {
-                        let web_hookmessage = "Hello " + this.user + ", You Have Created a New Task '" + this.task_title + "' with description '" + this.task_description + "' has deadline on" + this.due_date 
-                        await axios({
-                            method: 'post',
-                            url: "https://chat.googleapis.com/v1/spaces/AAAAINVb1U0/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Xo0KuYc01zSeLyWSYQuBXVNXwSaVDxmSsItNK9mDmmY%3D",
-                            data: {'text' : web_hookmessage}
-                        }).catch(err => { return err });
+                    if (message === "task created success")
                         this.$router.push("/")
                     }
                     else { this.error_message = message }
